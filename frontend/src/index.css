@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary: #0ea5e9;
+  --accent: #f43f5e;
+  --bg-main: #fcfcfd;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+}
+
+@layer base {
+  body {
+    @apply antialiased text-slate-800 bg-[#f8fafc];
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl;
+  }
+  
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-lg border-b border-white/20 sticky top-0 z-50;
+  }
+
+  .btn-primary {
+    @apply bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 
+           hover:bg-indigo-700 hover:shadow-2xl hover:shadow-indigo-200 active:scale-95 flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-indigo-600 text-indigo-600 px-8 py-4 rounded-2xl font-bold transition-all duration-300 
+           hover:bg-indigo-600 hover:text-white active:scale-95 flex items-center gap-2;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-sky-500;
+  }
+
+  .premium-shadow {
+    box-shadow: 0 20px 50px -12px rgba(79, 70, 229, 0.15);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-indigo-200 rounded-full hover:bg-indigo-300;
+}
