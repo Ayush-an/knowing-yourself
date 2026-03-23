@@ -1,10 +1,12 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import { User, Phone, Briefcase, Calendar, Info, ShieldCheck, MapPin } from 'lucide-react';
 
 function Profile() {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     if (!user) return (
         <div className="flex items-center justify-center min-h-[60vh]">
@@ -86,7 +88,7 @@ function Profile() {
                                 </p>
                             </div>
                             <button
-                                onClick={() => window.location.href = '/personality'}
+                                onClick={() => navigate('/personality')}
                                 className="ml-auto bg-white text-indigo-600 px-8 py-4 rounded-2xl font-black hover:bg-indigo-600 hover:text-white transition-all shadow-xl shadow-indigo-100 active:scale-95"
                             >
                                 Start Test

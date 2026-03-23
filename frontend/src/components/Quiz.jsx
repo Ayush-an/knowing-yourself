@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import api from "../utils/api"
 import { Send, ChevronRight, Loader2 } from "lucide-react"
 
@@ -10,6 +11,7 @@ function Quiz() {
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(true)
   const [submitting, setSubmitting] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     api.get('/user/questions')
@@ -75,7 +77,7 @@ function Quiz() {
             Thank you for sharing. Your personalized SWOT analysis is now ready for review.
         </p>
         <button 
-          onClick={() => window.location.href = '/swot'}
+          onClick={() => navigate('/swot')}
           className="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition transform hover:scale-105 shadow-xl"
         >
           View My Analysis

@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../utils/api';
 import { AuthContext } from '../context/AuthContext';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
@@ -54,7 +55,7 @@ function SWOTChart() {
           <Sparkles className="text-indigo-600 mx-auto mb-6" size={48} />
           <h3 className="text-3xl font-black text-slate-800 mb-4">Ready to see yours?</h3>
           <p className="text-slate-500 max-w-md mx-auto mb-10 font-medium">Log in to take the personality test and generate your own deep-dive SWOT analysis.</p>
-          <a href="/login" className="btn-primary inline-flex">Join the Platform</a>
+          <Link to="/login" className="btn-primary inline-flex">Join the Platform</Link>
         </div>
       </div>
     );
@@ -70,9 +71,9 @@ function SWOTChart() {
           <p className="text-slate-500 mb-12 max-w-md mx-auto font-medium text-lg leading-relaxed">
             Complete the personality test and our system will instantly map out your unique strengths and growth areas.
           </p>
-          <a href="/personality" className="bg-indigo-600 text-white px-10 py-5 rounded-3xl font-black shadow-2xl shadow-indigo-100 hover:bg-indigo-700 transition flex items-center gap-3 w-fit mx-auto active:scale-95">
+          <Link to="/personality" className="bg-indigo-600 text-white px-10 py-5 rounded-3xl font-black shadow-2xl shadow-indigo-100 hover:bg-indigo-700 transition flex items-center gap-3 w-fit mx-auto active:scale-95">
             Take the Discovery Test <ArrowRight size={20} />
-          </a>
+          </Link>
         </div>
       </div>
     );
